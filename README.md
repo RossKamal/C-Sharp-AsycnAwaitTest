@@ -16,7 +16,7 @@ Con2 ThreadId 1
 Finish ThreadId 1  
 After await Con3 ThreadId 4
 
-3. await Task
+3.  await Task
 Console1 ThreadId 1
 Console2 ThreadId 1
 After await Console3 ThreadId 4
