@@ -10,51 +10,56 @@ Con2 ThreadId 1
 Finish ThreadId 1  
 After await Con3 ThreadId 4  
 
-* Other Results:  
 2.	Task with (_)underscore                              
 Con1 ThreadId 1  
 Con2 ThreadId 1  
 Finish ThreadId 1  
 After await Con3 ThreadId 4
 
-3.	GetAwaiter().GetResult()             
+3. await Task
+Console1 ThreadId 1
+Console2 ThreadId 1
+After await Console3 ThreadId 4
+Finish ThreadId 4
+
+4.	GetAwaiter().GetResult()             
 Con1 ThreadId 1  
 Con2 ThreadId 1  
 After await Con3 ThreadId 4\
 Finish ThreadId 1
 
-4.	Task.Run(TestMethod)\
+5.	Task.Run(TestMethod)\
 Con1 ThreadId 1\
 Finish ThreadId 1\
 Con2 ThreadId 4\
 After await Con3 ThreadId 4
 
 
-5.	Task.Run(TestMethod).GetAwaiter().GetResult();\
+6.	Task.Run(TestMethod).GetAwaiter().GetResult();\
 Con1 ThreadId 1\
 Con2 ThreadId 4\
 After await Con3 ThreadId 5\
 Finish ThreadId 1
 
-6.	Task.Run(() => TestMethod());\
+7.	Task.Run(() => TestMethod());\
 Con1 ThreadId 1\
 Finish ThreadId 1\
 Con2 ThreadId 4\
 After await Con3 ThreadId 5
 
-7.	Task.Run(async () => await TestMethod());\
+8.	Task.Run(async () => await TestMethod());\
 Con1 ThreadId 1\
 Finish ThreadId 1\
 Con2 ThreadId 4\
 After await Con3 ThreadId 4
 
-8.	 Task.Run(async () => await TestMethod()).GetAwaiter().GetResult();\
+9.	 Task.Run(async () => await TestMethod()).GetAwaiter().GetResult();\
 Con1 ThreadId 1\
 Con2 ThreadId 4\
 After await Con3 ThreadId 4\
 Finish ThreadId 1
 
-9.	Task.Run(() => TestMethod()).GetAwaiter().GetResult();\
+10.	Task.Run(() => TestMethod()).GetAwaiter().GetResult();\
 Con1 ThreadId 1\
 Con2 ThreadId 4\
 After await Con3 ThreadId 6\
